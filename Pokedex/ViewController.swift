@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
-    var pokemons = [Pokemon]()
     
+    var pokemons = [Pokemon]()
+    var musicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.pokemonCollectionView.dataSource = self
         
         parsePokemonCSV()
+        initAudio()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +49,30 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    @IBAction func musicBtnPressed(_ sender: UIButton) {
+        if musicPlayer.isPlaying{
+            musicPlayer.pause()
+            sender.alpha = 0.2
+        }
+        else{
+            musicPlayer.play()
+            sender.alpha = 1.0
+        }
+    }
+    
+    
+    func initAudio(){
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
+        
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+        } catch let err as NSError{
+            print(err.debugDescription)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = pokemonCollectionView.dequeueReusableCell(withReuseIdentifier: "pokecell", for: indexPath) as? PokeCell{
