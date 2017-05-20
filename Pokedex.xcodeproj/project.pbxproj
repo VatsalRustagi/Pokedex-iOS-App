@@ -14,6 +14,7 @@
 		5158100E1ECFC2EA009403E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5158100C1ECFC2EA009403E5 /* Main.storyboard */; };
 		515810101ECFC2EA009403E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5158100F1ECFC2EA009403E5 /* Assets.xcassets */; };
 		515810131ECFC2EA009403E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515810111ECFC2EA009403E5 /* LaunchScreen.storyboard */; };
+		51CFE4FB1ECFDECC00804699 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CFE4FA1ECFDECC00804699 /* PokeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5158100F1ECFC2EA009403E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		515810121ECFC2EA009403E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		515810141ECFC2EA009403E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51CFE4FA1ECFDECC00804699 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				515810111ECFC2EA009403E5 /* LaunchScreen.storyboard */,
 				5108B6A51ECFD74000743535 /* pokemon.csv */,
 				515810141ECFC2EA009403E5 /* Info.plist */,
+				51CFE4FA1ECFDECC00804699 /* PokeCell.swift */,
 			);
 			path = Pokedex;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51CFE4FB1ECFDECC00804699 /* PokeCell.swift in Sources */,
 				5158100B1ECFC2EA009403E5 /* ViewController.swift in Sources */,
 				5108B6A81ECFD9A800743535 /* Pokemon.swift in Sources */,
 				515810091ECFC2EA009403E5 /* AppDelegate.swift in Sources */,
